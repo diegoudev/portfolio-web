@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o wrapper ocupe pelo menos toda a altura da viewport */
+}
+
+header {
+    background: #02416d;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.container {
+    max-width: 1800px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+#medico {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+}
+
+.menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: white; 
+    margin: 0 1rem; 
+    text-align: center; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+.header-sociais a {
+    margin: 0 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.header-sociais a:hover {
+    color: #007BFF;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+   
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #02416d;
+    text-align: center;
+}
+
+.mobile-nav nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav nav a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.mobile-nav.open {
+    display: block;
+}
+
+.container-login {
+    max-width: 400px;
+    width: 90%;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.123);
+    text-align: center;
+}
+
+.container-login h1 {
+    color: #02416d;
+    margin-bottom: 1.5rem;
+}
+
+.container-login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-login input[type="text"],
+.container-login input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.container-login input[type="text"]::placeholder,
+.container-login input[type="password"]::placeholder {
+    color: #888;
+}
+
+#esqueceu-senha {
+    color: #02416d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+#esqueceu-senha:hover {
+    text-decoration: underline;
+}
+
+#logar {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: #02416d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#logar:hover {
+    background-color: #01355a;
+}
+
+footer {
+    background-color: #02416d;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    margin-top: auto;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+}
+
+.footer-links nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-sociais a {
+    margin: 0 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.footer-sociais a:hover {
+    color: #007BFF;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container-login {
+        padding: 1rem;
+        margin: 2rem auto;
+    }
+
+    .container-login input[type="text"],
+    .container-login input[type="password"],
+    #logar {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .menu, .header-sociais {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .open {
+        display: flex;
+    }
+
+    .container-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo, .footer-links, .footer-contact, .footer-sociais {
+        margin-bottom: 10px;
+    }
+}
