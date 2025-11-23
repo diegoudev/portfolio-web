@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/3e82980daf.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.8.0/dist/sweetalert2.all.min.js"></script>
+    <title>Esqueceu a Senha</title>
+    <link rel="stylesheet" href="assets/css/styleEsqueceuSenha.css">
+</head>
+<body>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img id="medico" src="assets/imgs/medico.svg" alt="Imagem Medico">
+                <h1>Clinica Céu Azul</h1>
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="marcarconsulta.html">Marcar Consulta</a>
+                    <a href="sobrenos.html">Sobre Nós</a>
+                    <a href="login.html">Login</a>
+                </nav>
+            </div>
+            <div class="header-sociais">
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="hamburger-menu">&#9776;</div>
+        </div>
+        <div class="mobile-nav">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="marcarconsulta.html">Marcar Consulta</a>
+                <a href="sobrenos.html">Sobre Nós</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="form">
+        <h1>Recuperar Conta</h1>
+        <h3>ESQUECEU SUA SENHA!</h3>
+        <p>Não se preocupe, ajudaremos você! Vamos criar uma nova senha.</p>
+        <form onsubmit="event.preventDefault(); alert();">
+            <br>
+            E-mail ou Cpf:<input required type="text" placeholder="Digite seu E-mail ou CPF"><br>
+            <button id="logar">Recuperar Senha</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="container-footer">
+            <div class="footer-logo">
+                <h2>Clinica Céu Azul</h2>
+            </div>
+            <div class="footer-links">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="sobrenos.html">Sobre Nós</a>
+                    <a href="marcarconsulta.html">Marcar Consulta</a>
+                </nav>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fa-solid fa-phone"></i> (61) 1279-3743</p>
+                <p><i class="fa-solid fa-envelope"></i> contato@clinicaazul.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> QNA 157 LOTE 171 Sala 155 - Taguatinga,DF</p>
+            </div>
+            <div class="footer-sociais">
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Clinica Céu Azul. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('open');
+        });
+
+        function alert(){
+            Swal.fire({
+                title: "RECUPERAÇÃO DE SENHA ENVIADA!",
+                text: "Informações para Login foram enviadas no seu e-mail Siga as instruções enviadas para finalizar a recuperação.",
+                icon: "success",
+                confirmButtonText: "OK"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "login.html";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
